@@ -4,7 +4,7 @@ var pageLost = 0;
 var stack = [];
 var memoryStack = [];
 var method = 'fifo';
-var runid = '';
+var runId = null;
 var cache = {
 	memoryNumberInput: $('#memoryNumber'),
 	stackInput: $('#stack'),
@@ -106,7 +106,7 @@ function clearMemory() {
 
 
 function stopAll() {
-	window.clearInterval(runid);
+	window.clearInterval(runId);
 }
 
 // 运行程序 
@@ -170,7 +170,7 @@ function FIFO() {
 	var flogTime = 0;
 	var use = 0;
 	cache.stackFinish.html("");
-	runid = setInterval(function() {
+	runId = setInterval(function() {
 		if(i != length) {
 			flog = 0;
 			stackStatus.html(length - i - 1);
@@ -202,7 +202,7 @@ function FIFO() {
 		stackFinishUpdate();
 	}, 1000);
 	setTimeout(function() {
-		window.clearInterval(runid);
+		window.clearInterval(runId);
 	}, (length + memoryNumber + 1) * 1000);
 }
 
