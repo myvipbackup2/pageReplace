@@ -69,16 +69,17 @@ function initStack() {
 
 // 重置
 function clearAll() {
-	stopAll();
-	memoryNumber = 7;
-	pageLost = 0;
-	stack = [];
-	memoryStack = [];
-	method = 'fifo';
-	clearMemory();
-	cache.stackWait.html("");
-	cache.stackFinish.html("");
-	clearStatus();
+	// stopAll();
+	// memoryNumber = 7;
+	// pageLost = 0;
+	// stack = [];
+	// memoryStack = [];
+	// method = 'fifo';
+	// clearMemory();
+	// cache.stackWait.html("");
+	// cache.stackFinish.html("");
+	// clearStatus();
+	window.location.reload();
 }
 
 function clearStatus() {
@@ -161,14 +162,11 @@ function stackFinishUpdate() {
 function FIFO() {
 	var length = stack.length;
 	var _stack = stack.concat();
-	var j = 0;
 	var i = 0;
-	var resetid;
 	var stackStatus = cache.stackStatus;
 	var loseStatus = cache.loseStatus;
 	var flog = 0;
 	var flogTime = 0;
-	var use = 0;
 	cache.stackFinish.html("");
 	runId = setInterval(function() {
 		if(i != length) {
